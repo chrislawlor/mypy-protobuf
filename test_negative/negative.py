@@ -98,3 +98,7 @@ OuterEnum.Name(OuterEnum.values()[0])
 OuterEnum.Name(SimpleProto3.InnerEnum.values()[0])  # E:2.7 E:3.5
 OuterEnum.Name(OuterEnum.items()[0][1])
 OuterEnum.Name(SimpleProto3.InnerEnum.items()[0][1])  # E:2.7 E:3.5
+
+# Map field does not have get_or_create when mapping to a simple type
+s7 = Simple1()
+s7.a_map.get_or_create(0)  # E:2.7 E:3.5

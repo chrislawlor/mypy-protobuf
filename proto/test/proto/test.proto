@@ -47,6 +47,7 @@ message Simple1 {
   }
 
   map<int32, int32> a_map = 21;
+  map<int32, InnerMessage> a_map_to_message = 22;
 }
 
 message Simple2 {

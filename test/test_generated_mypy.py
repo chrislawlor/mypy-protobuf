@@ -104,8 +104,8 @@ def test_generate_negative_matches():
     assert errors_35 == expected_errors_35
 
     # Some sanity checks to make sure we don't mess this up. Please update as necessary.
-    assert len(errors_27) == 30
-    assert len(errors_35) == 30
+    assert len(errors_27) == 31
+    assert len(errors_35) == 31
 
 
 def test_func():
@@ -312,12 +312,9 @@ def test_which_oneof_proto3():
 
 def test_map_field_get_or_create_proto2():
     # type: () -> None
-    s = Simple1(a_map={0: 0})
+    s = Simple1()
 
-    one = s.a_map.get_or_create(1)
-    one = 1
-
-    assert s.a_map[1] == 1
+    inner_message = s.a_map_to_message.get_or_create(1)
 
 
 def test_constructor_proto2():
