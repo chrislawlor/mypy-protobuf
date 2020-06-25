@@ -310,6 +310,16 @@ def test_which_oneof_proto3():
         s_untyped.WhichOneof("garbage")
 
 
+def test_map_field_get_or_create_proto2():
+    # type: () -> None
+    s = Simple1(a_map={0: 0})
+
+    one = s.a_map.get_or_create(1)
+    one = 1
+
+    assert s.a_map[1] == 1
+
+
 def test_constructor_proto2():
     # type: () -> None
     x = Simple2()  # It's OK to omit a required field from the constructor.

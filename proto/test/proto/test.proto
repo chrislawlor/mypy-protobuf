@@ -39,12 +39,14 @@ message Simple1 {
   optional test.nested_package.AnotherNested.NestedMessage nested_message = 15;
 
   oneof a_oneof {
-      string a_oneof_1 = 16;
-      string a_oneof_2 = 17;
-      Simple2 outer_message_in_oneof = 18;
-      OuterEnum outer_enum_in_oneof = 19;
-      InnerEnum inner_enum_in_oneof = 20;
+    string a_oneof_1 = 16;
+    string a_oneof_2 = 17;
+    Simple2 outer_message_in_oneof = 18;
+    OuterEnum outer_enum_in_oneof = 19;
+    InnerEnum inner_enum_in_oneof = 20;
   }
+
+  map<int32, int32> a_map = 21;
 }
 
 message Simple2 {
